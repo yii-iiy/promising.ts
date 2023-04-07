@@ -23,3 +23,9 @@ promisingGetter
     (result: string | undefined) => { console.log(`[Result] gotten : ${result}`) ; }
 ) ;
 ~~~
+
+### desc
+
+这是个练手项目。
+
+它会允许你给你的异步任务的 `then` 链的某个环节增加等待效果，并且仍然能对成功和失败的情况做出不同操作。
