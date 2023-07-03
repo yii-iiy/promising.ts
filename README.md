@@ -1,10 +1,15 @@
 # promising.ts
-👸🏻 promise to give me anything
 
-usage
+~~~ md
+👸🏻 do something while promising
+~~~
 
-~~~ tsx
-import { promisingGetter } from "./promising.tsx" ;
+（实验性项目）在 Promise 期间插入轮询逻辑
+
+## usage
+
+~~~ ts
+import { promisingGetter } from "./promising.ts" ;
 
 promisingGetter
 (
@@ -24,8 +29,4 @@ promisingGetter
 ) ;
 ~~~
 
-### desc
 
-这是个由于研究 Typescript 中的轮询工具而形成的项目。
-
-该工具允许你给异步任务 `then` 链的某个环节增加等待时的动作效果。
