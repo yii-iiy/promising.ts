@@ -8,29 +8,29 @@ interface Promising<T>
 
 export 
 const Promising = 
-    <T,> (promise: Promise<T> | PromiseLike<T>)
-    : Promising<T> =>
-    {
-        const promising: Promising<T> = {completed: false} ;
-        promise
-            .then
-            ( res => 
-            {
-                promising.result = res ;
-                promising.completed = true ; }
-            , (err: any) => 
-            {
-                promising.error = err ;
-                promising.completed = true ; }
-            )
-        
-        return promising ;
-    } ;
+<T,> (promise: Promise<T> | PromiseLike<T>)
+: Promising<T> =>
+{
+    const promising: Promising<T> = {completed: false} ;
+    promise
+        .then
+        ( res => 
+        {
+            promising.result = res ;
+            promising.completed = true ; }
+        , (err: any) => 
+        {
+            promising.error = err ;
+            promising.completed = true ; }
+        )
+    
+    return promising ;
+} ;
 
 export 
 const promisingGetter = 
-    <T,> (promise: Promise<T> | PromiseLike<T>, interval: number) => 
-        (watting: () => any ,occurred: (error: any) => any, gotten: (result: T | undefined) => any)
+<T,> (promise: Promise<T> | PromiseLike<T>, interval: number) => 
+    (watting: () => any ,occurred: (error: any) => any, gotten: (result: T | undefined) => any)
     : Promise<T> | PromiseLike<T> =>
     {
         const promising: Promising<T> = Promising(promise) ;
